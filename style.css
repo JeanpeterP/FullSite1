@@ -1,85 +1,73 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@200&display=swap');
 * {
-    Padding: 0;
+    padding: 0;
     margin: 0;
     box-sizing: border-box;
-}
-
-html{
-    font-size: 10px;
-    color: white;
-    font-family: 'IBM Plex Serif', serif;
-}
-
-a {
+  }
+  
+  a {
     text-decoration: none;
-}
-
-body {
-    background:rgb(123, 127, 153);
-}
-
-.container{
+  }
+  
+  body {
+    background: #4e186e;
+  }
+  
+  .container {
+    width: min(80%, 1200px);
+    margin: auto;
     min-height: 100vh;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 20px;
-}
-
-/* Hero Section */
-#hero{
-    background-image: url(./img/galaxy.jpeg);
+    text-align: center;
+  }
+  
+  .hero {
+    background: url(img/galaxy.jpeg);
     background-size: cover;
-    background-position: top center;
-    position: relative;
-    z-index: 1;
-}
-#hero::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    height: 100%;
-    width: 100%;
-    background-color: blue;
-    opacity: .2;
-    z-index: -1;
-}
-#hero h1 {
-    display: block;
-    width: fit-content;
-    font-size: 4rem;
-    position: relative;
-    color: transparent;
-    animation: text_reveal 1s ease forwards;
-}
-#hero h1 span {
-    color: red;
-    background-color: red;
-    animation: text_reveal_box 3s ease;
-}
-#hero .cta {
-    display: inline-block;
-    padding: 10px 30px;
-    position:relative;
-    left: 55px;
-    align-items: center;
-    color:red;
-    background-color: transparent;
     border: 2px solid red;
-    font-size: 2rem;
-    text-transform: uppercase;
-    letter-spacing: .1rem;
-    margin-top: 30px;
-    transition: .3s ease;
-    transition-property: background-color, color;
-}
-#hero .cta:hover{
-    color: white;
+    display: grid;
+    place-items: center;
+  }
+  
+  .hero-text {
+    border: 2px solid yellow;
+    display: inline-block;
+    line-height: 1;
+    margin: 5em auto;
+  }
+  span {
+    display: inline-block;
+    margin-right: auto;
+  
+    position: relative;
+    font-size: clamp(1.5rem, 5vw + 10px, 3rem);
+    animation: reveal_anim 1s forwards;
+  }
+  span::before {
+    content: "";
+    position: absolute;
     background-color: red;
-}
+    display: block;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+  
+  a {
+    text-decoration: none;
+  }
+  
+  .cta {
+    display: inline-block;
+    margin-right: auto;
+    margin-top: 1em;
+    padding: 0.2em 0.5em;
+    font-size: clamp(1rem, 5vw, 2rem);
+    border: 2px solid blue;
+    animation: reveal_anim 1s forwards;
+    animation-delay: 500ms;
+    opacity: 0;
+  
+  }
 /* End Hero Section */
 /* Servicesss Section */
 #services{
@@ -88,22 +76,67 @@ body {
     font-size: 15px;
     max-width: 1500px;
     margin: 0 auto;
+    padding-top: 5px 0;
+    border-top: 5px;
+    margin-top: 5px;
     /*this flex overrised the container style*/
 }   
+#services .section-title{
+    font-size: 4rem;
+    font-weight: 300;
+    /*light weight*/
+    color: #6f2a70;
+    margin-bottom: 1px;
+    text-transform: uppercase;
+    letter-spacing: .2rem;
+    text-align: center;
+}
+#services .section-title span{
+    color:#800000;
+}
+#services .service-top p {
+    font-size: 1.4rem;
+    margin-top: 5px;
+    line-height: 2.5rem;
+    font-weight: 300px;
+    letter-spacing: .05rem;
+}
+#services .service-bottom {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+#services .service-item {
+    flex-basis: 80%;
+    display: fleq;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    padding: 30px;
+    border-radius: 10px;
+    background-image: url(./img/nebulas.jpg);
+    background-color: cover;
+    margin: 10px 5%;
+}
+#services .service-item p {
+    color: red;
+    font-size: 20px;
+}
+#services .service .container {
+    margin: 10px;
+}
 /* End of Servicesss Section */
 /*keyframes*/
-@keyframes text_reveal_box{
+@keyframes reveal_anim{
+    0% {
+        transform: translateX(50%);
+    }
     50% {
-        width: 100%;
-        left: 0;
+        opacity:0.5;
     }
     100% {
-        width: 0;
-        left: 100%;
-    }
-}
-@keyframes text_reveal{
-    100% {
-        color: white;
+        transform: translateX(0%);
+        opacity: 1;
     }
 }
