@@ -52,9 +52,15 @@ body {
     width: fit-content;
     font-size: 4rem;
     position: relative;
-    color: white;
+    color: transparent;
+    animation: text_reveal 1s ease forwards;
 }
-.cta {
+#hero h1 span {
+    color: red;
+    background-color: red;
+    animation: text_reveal_box 3s ease;
+}
+#hero .cta {
     display: inline-block;
     padding: 10px 30px;
     position:relative;
@@ -75,3 +81,29 @@ body {
     background-color: red;
 }
 /* End Hero Section */
+/* Servicesss Section */
+#services{
+    flex-direction: column;
+    text-align: center;
+    font-size: 15px;
+    max-width: 1500px;
+    margin: 0 auto;
+    /*this flex overrised the container style*/
+}   
+/* End of Servicesss Section */
+/*keyframes*/
+@keyframes text_reveal_box{
+    50% {
+        width: 100%;
+        left: 0;
+    }
+    100% {
+        width: 0;
+        left: 100%;
+    }
+}
+@keyframes text_reveal{
+    100% {
+        color: white;
+    }
+}
