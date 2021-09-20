@@ -10,7 +10,7 @@
   }
   
   body {
-    background: #4e186e;
+    background: #290930;
   }
   
   .container {
@@ -18,21 +18,32 @@
     margin: auto;
     min-height: 100vh;
     text-align: center;
+    position: relative;
+    top: -70px;
   }
   
   .hero {
-    background: url(img/galaxy.jpeg);
+    background: url(img/flv1.jpg);
     background-size: cover;
-    border: 2px solid red;
+    border: 2px solid #800000;
     display: grid;
-    place-items: center;
+    place-items: bottom;
+    width: 965px;
+    z-index: 1;
   }
   
   .hero-text {
-    border: 2px solid yellow;
+    color: #800000;
     display: inline-block;
     line-height: 1;
     margin: 5em auto;
+    z-index: 1;
+  }
+  .hero-text2 {
+    color: #800000;
+    position: relative;
+    top: 100px;
+    z-index: 1;
   }
   span {
     display: inline-block;
@@ -42,10 +53,10 @@
     font-size: clamp(1.5rem, 5vw + 10px, 3rem);
     animation: reveal_anim 1s forwards;
   }
-  span::before {
+  #hero span::before {
     content: "";
     position: absolute;
-    background-color: red;
+    background-color: lavenderblush;
     display: block;
     width: 100%;
     height: 100%;
@@ -76,7 +87,7 @@
     font-size: 15px;
     max-width: 1500px;
     margin: 0 auto;
-    padding-top: 5px 0;
+    padding-top: 100px 0;
     border-top: 5px;
     margin-top: 5px;
     /*this flex overrised the container style*/
@@ -93,6 +104,11 @@
 }
 #services .section-title span{
     color:#800000;
+    font-size: 3rem;
+}
+#services .section-title{
+  color: white;
+  font-size: 3rem;
 }
 #services .service-top p {
     font-size: 1.4rem;
@@ -106,6 +122,7 @@
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
+    
 }
 #services .service-item {
     flex-basis: 80%;
@@ -113,15 +130,29 @@
     align-items: flex-start;
     justify-content: center;
     flex-direction: column;
-    padding: 30px;
+    padding: 20px;
     border-radius: 10px;
-    background-image: url(./img/nebulas.jpg);
-    background-color: cover;
+    background-image: url(./img/galaxy.jpeg);
+    background-size: cover;
     margin: 10px 5%;
 }
+#services .service-item::after{
+  content:'';
+  position:absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  opacity: .1;
+  z-index: -1;
+}
 #services .service-item p {
-    color: red;
+    color: #800000;
     font-size: 20px;
+}
+#services .service-item h2 {
+  color: white;
 }
 #services .service .container {
     margin: 10px;
