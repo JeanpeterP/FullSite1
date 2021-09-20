@@ -132,7 +132,7 @@
     flex-direction: column;
     padding: 20px;
     border-radius: 10px;
-    background-image: url(./img/galaxy.jpeg);
+    background-image: url(./img/stars.jpg);
     background-size: cover;
     margin: 10px 5%;
 }
@@ -147,12 +147,19 @@
   opacity: .1;
   z-index: -1;
 }
+.icon img{
+  position:relative;
+  left: 425px;
+}
 #services .service-item p {
     color: #800000;
     font-size: 20px;
 }
 #services .service-item h2 {
   color: white;
+  position: relative;
+  font-size: 30px;
+  top: -60px;
 }
 #services .service .container {
     margin: 10px;
